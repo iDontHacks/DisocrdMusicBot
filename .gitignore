@@ -130,4 +130,4 @@ dmypy.json
 
 # Program specific ignores
 #       .mp3 is for the song file that keeps getting downloaded and replaced
-*.mp3
+song.mp3

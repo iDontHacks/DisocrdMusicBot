@@ -1,2 +1,0 @@
-E logged at: 2020-03-31 04:46:25E dets: 
-division by zero
