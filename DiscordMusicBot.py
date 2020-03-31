@@ -13,7 +13,7 @@ BOT_NAME = 'Music Player'
 CLIENT_ID = '5bdb9ae41cfb465391bb6184996f97ae'
 CLIENT_SECRET = '9ca3934ab64549e9b24859362dda92e9'
 
-players = {}
+FLAGS = {'offCommand':False}
 
 def logError(err):
         with open('errorLog.txt', 'a+') as file:
@@ -147,7 +147,10 @@ async def play(ctx, url):
                                 except Exception:
                                         logError(traceback.format_exc())
                                 finally:
-                                        pass
+                                        if not FLAGS['offCommand']:
+                                                pass
+                                        else:
+                                                break
                 else:
                         await channel.send('The system for that is not set up yet')
 
@@ -156,6 +159,26 @@ async def play(ctx, url):
 
         print('Done play')
 
+@client.command(pass_context=True)
+async def pause(ctx):
+        guild = ctx.message.guild
+        voice_client = guild.voice_client
+        voice_client.pause()
+        print('Done pause')
+        
+@client.command(pass_context=True)
+async def resume(ctx):
+        guild = ctx.message.guild
+        voice_client = guild.voice_client
+        voice_client.resume()
+        print('Done resume')
+        
+@client.command(pass_context=True)
+async def stop(ctx):
+        guild = ctx.message.guild
+        voice_client = guild.voice_client
+        voice_client.stop()
+        print('Done stop')
 
 @client.command(pass_context=True)
 async def getTracks(ctx):
@@ -170,5 +193,11 @@ async def getTracks(ctx):
 
         await channel.send(file = discord.File(arr, 'Playlist.png'))
         print('Done getTracks')
+        
+@client.command(pass_context=True)
+async def off(ctx):
+        FLAGS['offCommand']=True
+        print('Off command passed')
+        await client.logout()
 	
 client.run(TOKEN)
