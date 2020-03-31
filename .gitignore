@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Program specific ignores
+#       .mp3 is for the song file that keeps getting downloaded and replaced
+.mp3
