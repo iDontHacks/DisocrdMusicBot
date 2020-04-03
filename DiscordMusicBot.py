@@ -1,4 +1,5 @@
-import discord, os, sys, json, spotipy, webbrowser, io, urllib.parse, urllib.request, youtube_dl, asyncio, time, traceback, re #regex
+import discord, os, sys, json, spotipy, webbrowser, io, urllib.parse, urllib.request, youtube_dl, asyncio, time, traceback, requests, re #regex
+from bs4 import BeautifulSoup
 from discord.ext import commands
 from json.decoder import JSONDecoder
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -15,6 +16,8 @@ CLIENT_SECRET = '9ca3934ab64549e9b24859362dda92e9'
 
 FLAGS = {'offCommand':False}
 
+SONG_CHECK_GAP = 10
+
 def logError(err):
         with open('errorLog.txt', 'a+') as file:
                 file.write('Error logged at: ' + time.strftime("%H:%M:%S %d-%m-%Y", time.localtime()) + '\n')
@@ -26,13 +29,13 @@ def generateListImage(dataList):
         height = len(dataList)
         fontSize = 50
 
-        # creating a image object  
+        # creating a image object
         image = Image.new('RGB', ((textWidth*fontSize)+10, (height*fontSize)+fontSize), color = (73, 109, 137))
 
-        draw = ImageDraw.Draw(image)  
+        draw = ImageDraw.Draw(image)
 
-        # specified font size 
-        font = ImageFont.truetype(r'C:\Users\System-Pc\Desktop\arial.ttf', fontSize)  
+        # specified font size
+        font = ImageFont.truetype(r'C:\Users\System-Pc\Desktop\arial.ttf', fontSize)
 
         text = ''
 
@@ -41,17 +44,17 @@ def generateListImage(dataList):
 
         text += dataList[len(dataList) - 1]
 
-        # drawing text size 
-        draw.text((5, 5), text, font = font, align ="left")  
+        # drawing text size
+        draw.text((5, 5), text, font = font, align ="left")
 
         print('Done generateListImage')
         return image
-        
 
-def getPlaylist(urlOrUri):
+
+def getSpotifyPlaylist(urlOrUri):
         testPlaylistLink = 'https://open.spotify.com/playlist/37i9dQZF1DX0s5kDXi1oC5?si=Kug95Nj8TKe9ZLXsu11ovg'
         testPlaylistURI = 'spotify:playlist:37i9dQZF1DX0s5kDXi1oC5'
-        
+
         spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials()) #create a spotify object
 
         playlistJSON = spotify.playlist(urlOrUri)
@@ -66,11 +69,30 @@ def getPlaylist(urlOrUri):
                 track = spotify.track(trackURIs[i])
                 artistURI = track['artists'][0]['uri']
                 artist = spotify.artist(artistURI)['name']
-                
-                tracks.append([track['name'] + ' by ' + artist, track['duration_ms'], track['name']])
 
-        print('Done getPlaylist')
+                tracks.append([track['name'] + ' by ' + artist, track['duration_ms']])
+                #[Name of song and artist, duration of song]
+                # duration of song is now legacy code
+                              
+        print('Done getSpotifyPlaylist')
         return playListName, tracks
+
+def getSpotifySong(urlOrUri):
+        testPlaylistLink = 'https://open.spotify.com/playlist/37i9dQZF1DX0s5kDXi1oC5?si=Kug95Nj8TKe9ZLXsu11ovg'
+        testPlaylistURI = 'spotify:playlist:37i9dQZF1DX0s5kDXi1oC5'
+
+        spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials()) #create a spotify object
+
+        trackObj = spotify.track(urlOrUri)
+        artistURI = trackObj['artists'][0]['uri']
+        artist = spotify.artist(artistURI)['name']
+
+        track = [trackObj['name'] + ' by ' + artist, trackObj['duration_ms']]
+        #[Name of song and artist, duration of song]
+        # duration of song is now legacy code
+
+        print('Done getSpotifySong')
+        return track
 
 
 def getYtLink(name):
@@ -80,6 +102,25 @@ def getYtLink(name):
         print('Done getYtLink')
         return ("http://www.youtube.com/watch?v=" + search_results[0]) #print the youtube video url followed by the first 11 digit identifer found by filter
 
+
+def getYtLinksFromPlaylist(url):
+        res = requests.get(url).text
+        soup = BeautifulSoup(res, features='lxml')
+        urls = []
+        playlistName = ''
+        youtubeVideoURL = "http://www.youtube.com/watch?v="
+
+        playlistTitle =  soup.select('div.pl-header-content h1.pl-header-title')
+        #h1 tag under the div tag
+        tags = soup.select('a.spf-link.yt-uix-sessionlink.yt-uix-tile-link.pl-video-title-link')
+        #pl-video-title-link yt-uix-tile-link yt-uix-sessionlink spf-link is what it looks like in the html tag
+
+        for tag in tags:
+            urls.append([youtubeVideoURL + tag['href'][9:20], tag.string.strip()])
+
+        playlistName = playlistTitle[0].string.strip()
+        
+        return playlistName, urls
 
 def downloadAudio(url):
         ydl_opts = {
@@ -97,13 +138,13 @@ def downloadAudio(url):
         print('Done downloadAudio')
         return True
 
-        
+
 @client.event
 async def on_ready():
         os.environ['SPOTIPY_CLIENT_ID'] = CLIENT_ID
         os.environ['SPOTIPY_CLIENT_SECRET'] = CLIENT_SECRET
         print('Bot Online')
-	
+
 @client.command(pass_context=True)
 async def join(ctx):
         channel = ctx.message.author.voice.channel
@@ -122,7 +163,28 @@ async def play(ctx, url):
         channel = ctx.channel
         if 'youtube' in url:
                 if 'playlist' in url:
-                        await channel.send('The system for that is not set up yet')
+                        playlistName, trackUrls = getYtLinksFromPlaylist(url)
+                        await channel.send('Now playing the playlist: ' + playlistName)
+
+                        for url in trackUrls:
+                                try:
+                                        guild = ctx.message.guild
+                                        voice_client = guild.voice_client
+
+                                        if not voice_client.is_playing():
+                                                check = downloadAudio(url[0])
+                                                if check:
+                                                        voice_client.play(discord.FFmpegPCMAudio("song.mp3"))
+                                                        await channel.send('Now playing: ' + url[1])
+                                        else:
+                                                await asyncio.sleep(SONG_CHECK_GAP)
+                                except Exception:
+                                        logError(traceback.format_exc())
+                                finally:
+                                        if not FLAGS['offCommand']:
+                                                pass
+                                        else:
+                                                break
                 else:
                         check = downloadAudio(url)
                         if check:
@@ -131,19 +193,22 @@ async def play(ctx, url):
                                 voice_client.play(discord.FFmpegPCMAudio("song.mp3"))
         elif 'spotify' in url:
                 if 'playlist' in url:
-                        playlistName, tracks = getPlaylist(url)
+                        playlistName, tracks = getSpotifyPlaylist(url)
                         await channel.send('Now playing the playlist: ' + playlistName)
-                        
+
                         for track in tracks:
                                 try:
-                                        ytUrl = getYtLink(track[0])
-                                        check = downloadAudio(ytUrl)
-                                        if check:
-                                                guild = ctx.message.guild
-                                                voice_client = guild.voice_client
-                                                voice_client.play(discord.FFmpegPCMAudio("song.mp3"))
-                                                await channel.send('Now playing: ' + track[2])
-                                                await asyncio.sleep( (track[1] / 1000) + 2 )
+                                        guild = ctx.message.guild
+                                        voice_client = guild.voice_client
+
+                                        if not voice_client.is_playing():
+                                                ytUrl = getYtLink(track[0])
+                                                check = downloadAudio(ytUrl)
+                                                if check:
+                                                        voice_client.play(discord.FFmpegPCMAudio("song.mp3"))
+                                                        await channel.send('Now playing: ' + track[0])
+                                        else:
+                                                await asyncio.sleep(SONG_CHECK_GAP)  
                                 except Exception:
                                         logError(traceback.format_exc())
                                 finally:
@@ -151,6 +216,23 @@ async def play(ctx, url):
                                                 pass
                                         else:
                                                 break
+                elif 'track' in url:
+                        track = getSpotifySong(url)
+                        try:
+                                guild = ctx.message.guild
+                                voice_client = guild.voice_client
+
+                                if not voice_client.is_playing():
+                                        ytUrl = getYtLink(track[0])
+                                        check = downloadAudio(ytUrl)
+                                        if check:
+                                                voice_client.play(discord.FFmpegPCMAudio("song.mp3"))
+                                                await channel.send('Now playing: ' + track[0])
+                                else:
+                                        await asyncio.sleep(SONG_CHECK_GAP)
+                        except Exception:
+                                logError(traceback.format_exc())
+                                await channel.send('The system has encountered an unexpected error, please try again later')
                 else:
                         await channel.send('The system for that is not set up yet')
 
@@ -165,14 +247,14 @@ async def pause(ctx):
         voice_client = guild.voice_client
         voice_client.pause()
         print('Done pause')
-        
+
 @client.command(pass_context=True)
 async def resume(ctx):
         guild = ctx.message.guild
         voice_client = guild.voice_client
         voice_client.resume()
         print('Done resume')
-        
+
 @client.command(pass_context=True)
 async def stop(ctx):
         guild = ctx.message.guild
@@ -183,7 +265,7 @@ async def stop(ctx):
 @client.command(pass_context=True)
 async def getTracks(ctx):
         channel = ctx.channel
-        plName, tracks = getPlaylist()       
+        plName, tracks = getSpotifyPlaylist()
 
         listImage = generateListImage(tracks)
 
@@ -193,11 +275,11 @@ async def getTracks(ctx):
 
         await channel.send(file = discord.File(arr, 'Playlist.png'))
         print('Done getTracks')
-        
+
 @client.command(pass_context=True)
 async def off(ctx):
         FLAGS['offCommand']=True
         print('Off command passed')
         await client.logout()
-	
+
 client.run(TOKEN)

@@ -1,0 +1,314 @@
+Error logged at: 06:22:32 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 173, in play
+    await asyncio.sleep( (track[1] / 1000) + 2 )
+UnboundLocalError: local variable 'track' referenced before assignment
+
+Error logged at: 06:22:38 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 171, in play
+    voice_client.play(discord.FFmpegPCMAudio("song.mp3"))
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\discord\voice_client.py", line 379, in play
+    raise ClientException('Already playing audio.')
+discord.errors.ClientException: Already playing audio.
+
+Error logged at: 06:22:41 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 171, in play
+    voice_client.play(discord.FFmpegPCMAudio("song.mp3"))
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\discord\voice_client.py", line 379, in play
+    raise ClientException('Already playing audio.')
+discord.errors.ClientException: Already playing audio.
+
+Error logged at: 06:22:42 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 173, in play
+    await asyncio.sleep( (track[1] / 1000) + 2 )
+UnboundLocalError: local variable 'track' referenced before assignment
+
+Error logged at: 06:22:42 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 171, in play
+    voice_client.play(discord.FFmpegPCMAudio("song.mp3"))
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\discord\voice_client.py", line 379, in play
+    raise ClientException('Already playing audio.')
+discord.errors.ClientException: Already playing audio.
+
+Error logged at: 06:22:49 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 171, in play
+    voice_client.play(discord.FFmpegPCMAudio("song.mp3"))
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\discord\voice_client.py", line 379, in play
+    raise ClientException('Already playing audio.')
+discord.errors.ClientException: Already playing audio.
+
+Error logged at: 06:22:53 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 171, in play
+    voice_client.play(discord.FFmpegPCMAudio("song.mp3"))
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\discord\voice_client.py", line 379, in play
+    raise ClientException('Already playing audio.')
+discord.errors.ClientException: Already playing audio.
+
+Error logged at: 06:22:58 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 172, in play
+    await channel.send('Now playing: ' + url[1])
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\discord\abc.py", line 856, in send
+    data = await state.http.send_message(channel.id, content, tts=tts, embed=embed, nonce=nonce)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\discord\http.py", line 165, in request
+    async with self.__session.request(method, url, **kwargs) as r:
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\aiohttp\client.py", line 1012, in __aenter__
+    self._resp = await self._coro
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\aiohttp\client.py", line 480, in _request
+    conn = await self._connector.connect(
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\aiohttp\connector.py", line 526, in connect
+    raise ClientConnectionError("Connector is closed.")
+aiohttp.client_exceptions.ClientConnectionError: Connector is closed.
+
+Error logged at: 06:45:23 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:23 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:23 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:23 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:23 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:23 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:23 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:23 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:23 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:23 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:23 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:23 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:23 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
+Error logged at: 06:45:24 03-04-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 174, in play
+    if not voice_client.is_playing():
+AttributeError: 'NoneType' object has no attribute 'is_playing'
+
