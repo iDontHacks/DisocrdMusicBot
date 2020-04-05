@@ -14,7 +14,7 @@ BOT_NAME = 'Music Player'
 CLIENT_ID = '5bdb9ae41cfb465391bb6184996f97ae'
 CLIENT_SECRET = '9ca3934ab64549e9b24859362dda92e9'
 
-FLAGS = {'offCommand':False}
+FLAGS = {'offCommand':False, 'debug':True, 'calledNext': False, 'calledPrev':False, 'calledStop':False}
 
 SONG_CHECK_GAP = 10
 
@@ -99,6 +99,10 @@ def getYtLink(name):
         query_string = urllib.parse.urlencode({"search_query" : name}) #Convert uInput into url format
         html_content = urllib.request.urlopen("http://www.youtube.com/results?" + query_string) #Go to website and return the html code for that site
         search_results = re.findall(r'href=\"\/watch\?v=(.{11})', html_content.read().decode()) #filter html code to links that have "watch?v={11 digit identifier}"
+
+        if FLAGS['debug']:
+                print('From getYtLink: ' + search_results[0])
+
         print('Done getYtLink')
         return ("http://www.youtube.com/watch?v=" + search_results[0]) #print the youtube video url followed by the first 11 digit identifer found by filter
 
@@ -115,8 +119,15 @@ def getYtLinksFromPlaylist(url):
         tags = soup.select('a.spf-link.yt-uix-sessionlink.yt-uix-tile-link.pl-video-title-link')
         #pl-video-title-link yt-uix-tile-link yt-uix-sessionlink spf-link is what it looks like in the html tag
 
+        if FLAGS['debug']:
+                print('From getYtLinksFromPlaylist (title): ')
+                print(playlistTitle)
+        
         for tag in tags:
-            tracks.append(tag.string.strip())
+                if FLAGS['debug']:
+                        print('From getYtLinksFromPlaylist: ' + tag.string.strip())
+                        
+                tracks.append(tag.string.strip())
 
         playlistName = playlistTitle[0].string.strip()
         
@@ -159,31 +170,76 @@ async def leave(ctx):
         print('Done leave')
 
 @client.command(pass_context=True)
+async def next(ctx):
+        FLAGS['calledNext'] = True
+        print('Done next')
+
+@client.command(pass_context=True)
+async def prev(ctx):
+        FLAGS['calledPrev'] = True
+        print('Done prev')
+
+@client.command(pass_context=True)
+async def debug(ctx):
+        if FLAGS['debug']:
+                FLAGS['debug'] = False
+        else:
+                FLAGS['debug'] = True
+        print('Done debug')
+
+@client.command(pass_context=True)
 async def play(ctx, url):
         channel = ctx.channel
+        i = 0
+        skipCalled = False
+        
         if 'youtube' in url:
                 if 'playlist' in url:
                         playlistName, tracks = getYtLinksFromPlaylist(url)
                         await channel.send('Now playing the playlist: ' + playlistName)
 
-                        for name in tracks:
+                        while i != range(len(tracks)) and not FLAGS['calledStop']:
+                                if FLAGS['debug']:
+                                        print('\nFrom play [before code]: ' + str(i))
+                                
+                                
                                 try:
                                         guild = ctx.message.guild
                                         voice_client = guild.voice_client
 
                                         if not voice_client.is_playing():
-                                                ytUrl = getYtLink(name)
+                                                if FLAGS['debug']:
+                                                        print('\nFrom Play [index]: ' + str(i))
+                                                        print('From play [name]: ' + tracks[i])
+                                                        
+                                                ytUrl = getYtLink(tracks[i])
                                                 check = downloadAudio(ytUrl)
                                                 if check:
                                                         voice_client.play(discord.FFmpegPCMAudio("song.mp3"))
-                                                        await channel.send('Now playing: ' + name)
-                                        else:
-                                                await asyncio.sleep(SONG_CHECK_GAP)
+                                                        await channel.send('Now playing: ' + tracks[i])
+
+                                                        while voice_client.is_playing() or voice_client.is_paused():
+                                                                if FLAGS['calledNext']:
+                                                                        i += 1
+                                                                        FLAGS['calledNext'] = False
+                                                                        skipCalled = True
+                                                                        voice_client.stop()
+                                                                        break
+                                                                elif FLAGS['calledPrev']:
+                                                                        i -= 1
+                                                                        FLAGS['calledPrev'] = False
+                                                                        skipCalled = True
+                                                                        voice_client.stop()
+                                                                        break
+                                                                else:
+                                                                        await asyncio.sleep(SONG_CHECK_GAP)
                                 except Exception:
                                         logError(traceback.format_exc())
                                 finally:
                                         if not FLAGS['offCommand']:
-                                                pass
+                                                if not skipCalled:
+                                                        i += 1
+                                                skipCalled = False
                                         else:
                                                 break
                 else:
@@ -197,24 +253,40 @@ async def play(ctx, url):
                         playlistName, tracks = getSpotifyPlaylist(url)
                         await channel.send('Now playing the playlist: ' + playlistName)
 
-                        for track in tracks:
+                        while i != range(len(tracks)) and not FLAGS['calledStop']:
                                 try:
                                         guild = ctx.message.guild
                                         voice_client = guild.voice_client
 
                                         if not voice_client.is_playing():
-                                                ytUrl = getYtLink(track[0])
+                                                ytUrl = getYtLink(tracks[i][0])
                                                 check = downloadAudio(ytUrl)
                                                 if check:
                                                         voice_client.play(discord.FFmpegPCMAudio("song.mp3"))
-                                                        await channel.send('Now playing: ' + track[0])
+                                                        await channel.send('Now playing: ' + tracks[i][0])
                                         else:
-                                                await asyncio.sleep(SONG_CHECK_GAP)  
+                                                while voice_client.is_playing() or voice_client.is_paused():
+                                                        if FLAGS['calledNext']:
+                                                                i += 1
+                                                                FLAGS['calledNext'] = False
+                                                                skipCalled = True
+                                                                voice_client.stop()
+                                                                break
+                                                        elif FLAGS['calledPrev']:
+                                                                i -= 1
+                                                                FLAGS['calledPrev'] = False
+                                                                skipCalled = True
+                                                                voice_client.stop()
+                                                                break
+                                                        else:
+                                                                await asyncio.sleep(SONG_CHECK_GAP)  
                                 except Exception:
                                         logError(traceback.format_exc())
                                 finally:
                                         if not FLAGS['offCommand']:
-                                                pass
+                                                if not skipCalled:
+                                                        i += 1
+                                                skipCalled = False
                                         else:
                                                 break
                 elif 'track' in url:
@@ -240,6 +312,8 @@ async def play(ctx, url):
         else:
             await channel.send('The system only set up for youtube and spotify')
 
+        i = 0
+        FLAGS['calledStop'] = False
         print('Done play')
 
 @client.command(pass_context=True)
@@ -261,6 +335,7 @@ async def stop(ctx):
         guild = ctx.message.guild
         voice_client = guild.voice_client
         voice_client.stop()
+        FLAGS['calledStop'] = True
         print('Done stop')
 
 @client.command(pass_context=True)

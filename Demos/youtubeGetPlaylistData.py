@@ -12,5 +12,5 @@ tags = soup.select('a.spf-link.yt-uix-sessionlink.yt-uix-tile-link.pl-video-titl
 print(title[0].string.strip() + '\n')
 
 for tag in tags:
-    print(tag.string.strip())
+    print(tag)
     
