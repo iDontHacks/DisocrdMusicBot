@@ -106,7 +106,7 @@ def getYtLink(name):
 def getYtLinksFromPlaylist(url):
         res = requests.get(url).text
         soup = BeautifulSoup(res, features='lxml')
-        urls = []
+        tracks = []
         playlistName = ''
         youtubeVideoURL = "http://www.youtube.com/watch?v="
 
@@ -116,11 +116,11 @@ def getYtLinksFromPlaylist(url):
         #pl-video-title-link yt-uix-tile-link yt-uix-sessionlink spf-link is what it looks like in the html tag
 
         for tag in tags:
-            urls.append([youtubeVideoURL + tag['href'][9:20], tag.string.strip()])
+            tracks.append(tag.string.strip())
 
         playlistName = playlistTitle[0].string.strip()
         
-        return playlistName, urls
+        return playlistName, tracks
 
 def downloadAudio(url):
         ydl_opts = {
@@ -163,19 +163,20 @@ async def play(ctx, url):
         channel = ctx.channel
         if 'youtube' in url:
                 if 'playlist' in url:
-                        playlistName, trackUrls = getYtLinksFromPlaylist(url)
+                        playlistName, tracks = getYtLinksFromPlaylist(url)
                         await channel.send('Now playing the playlist: ' + playlistName)
 
-                        for url in trackUrls:
+                        for name in tracks:
                                 try:
                                         guild = ctx.message.guild
                                         voice_client = guild.voice_client
 
                                         if not voice_client.is_playing():
-                                                check = downloadAudio(url[0])
+                                                ytUrl = getYtLink(name)
+                                                check = downloadAudio(ytUrl)
                                                 if check:
                                                         voice_client.play(discord.FFmpegPCMAudio("song.mp3"))
-                                                        await channel.send('Now playing: ' + url[1])
+                                                        await channel.send('Now playing: ' + name)
                                         else:
                                                 await asyncio.sleep(SONG_CHECK_GAP)
                                 except Exception:
