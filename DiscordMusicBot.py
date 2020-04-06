@@ -1,4 +1,4 @@
-import discord, os, sys, json, spotipy, webbrowser, io, urllib.parse, urllib.request, youtube_dl, asyncio, time, traceback, requests, re #regex
+import discord, os, sys, json, spotipy, webbrowser, io, urllib.parse, urllib.request, youtube_dl, asyncio, time, traceback, requests, random, re #regex
 from bs4 import BeautifulSoup
 from discord.ext import commands
 from json.decoder import JSONDecoder
@@ -14,7 +14,7 @@ BOT_NAME = 'Music Player'
 CLIENT_ID = '5bdb9ae41cfb465391bb6184996f97ae'
 CLIENT_SECRET = '9ca3934ab64549e9b24859362dda92e9'
 
-FLAGS = {'offCommand':False, 'debug':True, 'calledNext': False, 'calledPrev':False, 'calledStop':False}
+FLAGS = {'offCommand':False, 'debug':True, 'calledNext': False, 'calledPrev':False, 'calledStop':False, 'goTo':[False,0]}
 
 SONG_CHECK_GAP = 10
 
@@ -27,6 +27,7 @@ def logError(err):
 def generateListImage(dataList):
         textWidth = len(max(dataList))
         height = len(dataList)
+        lastButOne = len(dataList) - 1
         fontSize = 50
 
         # creating a image object
@@ -39,16 +40,20 @@ def generateListImage(dataList):
 
         text = ''
 
-        for i in range(len(dataList) - 1):
-                text += dataList[i] + '\n'
+        for i in range(lastButOne):
+                text += str(i) + ': ' + dataList[i] + '\n'
 
-        text += dataList[len(dataList) - 1]
+        text += str(lastButOne) + ': ' + dataList[lastButOne]
 
         # drawing text size
         draw.text((5, 5), text, font = font, align ="left")
 
+        arr = io.BytesIO()
+        image.save(arr, format='PNG')
+        arr.seek(0)
+        
         print('Done generateListImage')
-        return image
+        return arr
 
 
 def getSpotifyPlaylist(urlOrUri):
@@ -70,7 +75,7 @@ def getSpotifyPlaylist(urlOrUri):
                 artistURI = track['artists'][0]['uri']
                 artist = spotify.artist(artistURI)['name']
 
-                tracks.append([track['name'] + ' by ' + artist, track['duration_ms']])
+                tracks.append(track['name'] + ' by ' + artist)
                 #[Name of song and artist, duration of song]
                 # duration of song is now legacy code
                               
@@ -107,7 +112,7 @@ def getYtLink(name):
         return ("http://www.youtube.com/watch?v=" + search_results[0]) #print the youtube video url followed by the first 11 digit identifer found by filter
 
 
-def getYtLinksFromPlaylist(url):
+def getYtPlaylist(url):
         res = requests.get(url).text
         soup = BeautifulSoup(res, features='lxml')
         tracks = []
@@ -120,12 +125,12 @@ def getYtLinksFromPlaylist(url):
         #pl-video-title-link yt-uix-tile-link yt-uix-sessionlink spf-link is what it looks like in the html tag
 
         if FLAGS['debug']:
-                print('From getYtLinksFromPlaylist (title): ')
+                print('From getYtPlaylist (title): ')
                 print(playlistTitle)
         
         for tag in tags:
                 if FLAGS['debug']:
-                        print('From getYtLinksFromPlaylist: ' + tag.string.strip())
+                        print('From getYtPlaylist: ' + tag.string.strip())
                         
                 tracks.append(tag.string.strip())
 
@@ -188,20 +193,67 @@ async def debug(ctx):
         print('Done debug')
 
 @client.command(pass_context=True)
-async def play(ctx, url):
+async def goto(ctx, num):
+        FLAGS['goTo'] = [True, int(num)]
+        print('Done goto')
+
+@client.command(pass_context=True)
+async def play(ctx, url, ran=False):
         channel = ctx.channel
         i = 0
         skipCalled = False
+        randCalled = []
         
         if 'youtube' in url:
                 if 'playlist' in url:
-                        playlistName, tracks = getYtLinksFromPlaylist(url)
+                        playlistName, tracks = getYtPlaylist(url)
                         await channel.send('Now playing the playlist: ' + playlistName)
 
+                        if not ran:
+                                imageArr = generateListImage(tracks)
+                                await channel.send(file = discord.File(imageArr, 'Playlist.png'))
+                        else:
+                                await channel.send('The playlist shall be played at random')
+
                         while i != range(len(tracks)) and not FLAGS['calledStop']:
+                                if ran:
+                                        if FLAGS['debug']:
+                                                print('\nFrom play [random condition (randCalled before)]: ' + str(randCalled))
+                                                print('From play [random condition (i before)]: ' + str(i))
+                                        if randCalled == []:
+                                                if FLAGS['debug']:
+                                                        print('From play [random condition (first call)]')
+                                                i = random.randrange(len(tracks))
+                                                randCalled.append(i)
+                                        else:
+                                                i = random.randrange(len(tracks))
+                                                if FLAGS['debug']:
+                                                        print('From play [random condition (number genereated)]: ' + str(i))
+                                                while i in randCalled:
+                                                        i = random.randrange(len(tracks))
+                                                        if FLAGS['debug']:
+                                                                print('From play [random condition (number in list trying again)]: ' + str(i))
+
+                                                randCalled.append(i)
+                                                
+                                        if FLAGS['debug']:
+                                                print('From play [random condition (randCalled after)]: ' + str(randCalled))
+                                                print('From play [random condition (i after)]' + str(i))
+                                                
                                 if FLAGS['debug']:
                                         print('\nFrom play [before code]: ' + str(i))
-                                
+
+                                if FLAGS['goTo'][0]:
+                                        if FLAGS['debug']:
+                                                print('From play [goTo flag triggered (i before)]: ' + str(i))
+
+                                        i = FLAGS['goTo'][1]
+                                        FLAGS['goTo'][0] = False
+                                        FLAGS['goTo'][1] = 0
+                                        gotoCalled = True
+                                        
+                                        if FLAGS['debug']:
+                                                print('From play [goTo flag triggered (i after)]: ' + str(i))
                                 
                                 try:
                                         guild = ctx.message.guild
@@ -231,6 +283,13 @@ async def play(ctx, url):
                                                                         skipCalled = True
                                                                         voice_client.stop()
                                                                         break
+                                                                elif FLAGS['goTo'][0]:
+                                                                        i = FLAGS['goTo'][1]
+                                                                        FLAGS['goTo'][0] = False
+                                                                        FLAGS['goTo'][1] = 0
+                                                                        skipCalled = True
+                                                                        voice_client.stop()
+                                                                        break
                                                                 else:
                                                                         await asyncio.sleep(SONG_CHECK_GAP)
                                 except Exception:
@@ -253,17 +312,36 @@ async def play(ctx, url):
                         playlistName, tracks = getSpotifyPlaylist(url)
                         await channel.send('Now playing the playlist: ' + playlistName)
 
+                        imageArr = generateListImage(tracks)
+                        await channel.send(file = discord.File(imageArr, 'Playlist.png'))
+
                         while i != range(len(tracks)) and not FLAGS['calledStop']:
+                                if random:
+                                        if randcalled == []:                                                
+                                                i = random.randrange(len(tracks))
+                                                randCalled.append(i)
+                                        else:
+                                                i = -1
+                                                while i not in randCalled:
+                                                        i = random.randrange(len(tracks))
+                                                randCalled.append(i)
+                                                
+                                if FLAGS['goTo'][0]:
+                                        i = FLAGS['goTo'][1]
+                                        FLAGS['goTo'][0] = False
+                                        FLAGS['goTo'][1] = 0
+                                        gotoCalled = True
+                                        
                                 try:
                                         guild = ctx.message.guild
                                         voice_client = guild.voice_client
 
                                         if not voice_client.is_playing():
-                                                ytUrl = getYtLink(tracks[i][0])
+                                                ytUrl = getYtLink(tracks[i])
                                                 check = downloadAudio(ytUrl)
                                                 if check:
                                                         voice_client.play(discord.FFmpegPCMAudio("song.mp3"))
-                                                        await channel.send('Now playing: ' + tracks[i][0])
+                                                        await channel.send('Now playing: ' + tracks[i])
                                         else:
                                                 while voice_client.is_playing() or voice_client.is_paused():
                                                         if FLAGS['calledNext']:
@@ -278,15 +356,19 @@ async def play(ctx, url):
                                                                 skipCalled = True
                                                                 voice_client.stop()
                                                                 break
+                                                        elif gotoCalled:
+                                                                voice_client.stop()
+                                                                break
                                                         else:
                                                                 await asyncio.sleep(SONG_CHECK_GAP)  
                                 except Exception:
                                         logError(traceback.format_exc())
                                 finally:
                                         if not FLAGS['offCommand']:
-                                                if not skipCalled:
+                                                if not skipCalled or not gotoCalled:
                                                         i += 1
                                                 skipCalled = False
+                                                gotoCalled = False
                                         else:
                                                 break
                 elif 'track' in url:
@@ -337,20 +419,6 @@ async def stop(ctx):
         voice_client.stop()
         FLAGS['calledStop'] = True
         print('Done stop')
-
-@client.command(pass_context=True)
-async def getTracks(ctx):
-        channel = ctx.channel
-        plName, tracks = getSpotifyPlaylist()
-
-        listImage = generateListImage(tracks)
-
-        arr = io.BytesIO()
-        listImage.save(arr, format='PNG')
-        arr.seek(0)
-
-        await channel.send(file = discord.File(arr, 'Playlist.png'))
-        print('Done getTracks')
 
 @client.command(pass_context=True)
 async def off(ctx):
