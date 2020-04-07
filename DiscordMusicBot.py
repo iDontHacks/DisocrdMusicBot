@@ -14,7 +14,7 @@ BOT_NAME = 'Music Player'
 CLIENT_ID = '5bdb9ae41cfb465391bb6184996f97ae'
 CLIENT_SECRET = '9ca3934ab64549e9b24859362dda92e9'
 
-FLAGS = {'offCommand':False, 'debug':True, 'calledNext': False, 'calledPrev':False, 'calledStop':False, 'goTo':[False,0]}
+FLAGS = {'offCommand':False, 'debug':True, 'calledNext': False, 'calledPrev':False, 'calledStop':False, 'goTo':[False,0], 'emergencyStop':False}
 
 SONG_CHECK_GAP = 10
 
@@ -215,7 +215,7 @@ async def play(ctx, url, ran=False):
                         else:
                                 await channel.send('The playlist shall be played at random')
 
-                        while i != range(len(tracks)) and not FLAGS['calledStop']:
+                        while i != range(len(tracks)) and not FLAGS['calledStop'] and not FLAGS['emergencyStop']:
                                 if ran:
                                         if FLAGS['debug']:
                                                 print('\nFrom play [random condition (randCalled before)]: ' + str(randCalled))
@@ -299,6 +299,9 @@ async def play(ctx, url, ran=False):
                                                 if not skipCalled:
                                                         i += 1
                                                 skipCalled = False
+
+                                        if len(tracks) >= i:
+                                                FLAGS['emergencyStop'] = True
                                         else:
                                                 break
                 else:
@@ -315,7 +318,7 @@ async def play(ctx, url, ran=False):
                         imageArr = generateListImage(tracks)
                         await channel.send(file = discord.File(imageArr, 'Playlist.png'))
 
-                        while i != range(len(tracks)) and not FLAGS['calledStop']:
+                        while i != range(len(tracks)) and not FLAGS['calledStop'] and not FLAGS['emergencyStop']:
                                 if random:
                                         if randcalled == []:                                                
                                                 i = random.randrange(len(tracks))
@@ -357,6 +360,10 @@ async def play(ctx, url, ran=False):
                                                                 voice_client.stop()
                                                                 break
                                                         elif gotoCalled:
+                                                                i = FLAGS['goTo'][1]
+                                                                FLAGS['goTo'][0] = False
+                                                                FLAGS['goTo'][1] = 0
+                                                                skipCalled = True
                                                                 voice_client.stop()
                                                                 break
                                                         else:
@@ -365,10 +372,12 @@ async def play(ctx, url, ran=False):
                                         logError(traceback.format_exc())
                                 finally:
                                         if not FLAGS['offCommand']:
-                                                if not skipCalled or not gotoCalled:
+                                                if not skipCalled:
                                                         i += 1
                                                 skipCalled = False
-                                                gotoCalled = False
+
+                                                if len(tracks) >= i:
+                                                        FLAGS['emergencyStop'] = True
                                         else:
                                                 break
                 elif 'track' in url:
@@ -396,6 +405,11 @@ async def play(ctx, url, ran=False):
 
         i = 0
         FLAGS['calledStop'] = False
+
+        if FLAGS['emergencyStop']:
+                await channel.send('The Bot has encountered an unexpected error, please try again after fixing')
+        
+        FLAGS['emergencyStop'] = False
         print('Done play')
 
 @client.command(pass_context=True)
