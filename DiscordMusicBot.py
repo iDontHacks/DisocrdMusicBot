@@ -215,8 +215,8 @@ async def play(ctx, url, ran=False):
                         else:
                                 await channel.send('The playlist shall be played at random')
 
-                        while i != range(len(tracks)) and not FLAGS['calledStop'] and not FLAGS['emergencyStop']:
-                                if ran:
+                        while i <= len(tracks) and not FLAGS['calledStop']:
+                                if ran and len(randCalled) <= len(tracks):
                                         if FLAGS['debug']:
                                                 print('\nFrom play [random condition (randCalled before)]: ' + str(randCalled))
                                                 print('From play [random condition (i before)]: ' + str(i))
@@ -299,9 +299,6 @@ async def play(ctx, url, ran=False):
                                                 if not skipCalled:
                                                         i += 1
                                                 skipCalled = False
-
-                                        if len(tracks) >= i:
-                                                FLAGS['emergencyStop'] = True
                                         else:
                                                 break
                 else:
@@ -315,11 +312,14 @@ async def play(ctx, url, ran=False):
                         playlistName, tracks = getSpotifyPlaylist(url)
                         await channel.send('Now playing the playlist: ' + playlistName)
 
-                        imageArr = generateListImage(tracks)
-                        await channel.send(file = discord.File(imageArr, 'Playlist.png'))
+                        if not ran:
+                                imageArr = generateListImage(tracks)
+                                await channel.send(file = discord.File(imageArr, 'Playlist.png'))
+                        else:
+                                await channel.send('The playlist shall be played at random')
 
-                        while i != range(len(tracks)) and not FLAGS['calledStop'] and not FLAGS['emergencyStop']:
-                                if random:
+                        while i <= len(tracks) and not FLAGS['calledStop']:
+                                if ran and len(randCalled) <= len(tracks):
                                         if randcalled == []:                                                
                                                 i = random.randrange(len(tracks))
                                                 randCalled.append(i)
@@ -375,9 +375,6 @@ async def play(ctx, url, ran=False):
                                                 if not skipCalled:
                                                         i += 1
                                                 skipCalled = False
-
-                                                if len(tracks) >= i:
-                                                        FLAGS['emergencyStop'] = True
                                         else:
                                                 break
                 elif 'track' in url:
