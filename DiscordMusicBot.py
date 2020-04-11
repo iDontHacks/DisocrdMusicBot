@@ -164,7 +164,7 @@ async def on_ready():
 @client.event
 async def on_disconnect():
         print('Bot has Disconnected')
-        client.connect()
+        await client.connect()
         print('Connect command passed')
 
 @client.command(pass_context=True)
