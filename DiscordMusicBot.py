@@ -161,6 +161,12 @@ async def on_ready():
         os.environ['SPOTIPY_CLIENT_SECRET'] = CLIENT_SECRET
         print('Bot Online')
 
+@client.event
+async def on_disconnect():
+        print('Bot has Disconnected')
+        client.connect()
+        print('Connect command passed')
+
 @client.command(pass_context=True)
 async def join(ctx):
         channel = ctx.message.author.voice.channel
@@ -215,7 +221,7 @@ async def play(ctx, url, ran=False):
                         else:
                                 await channel.send('The playlist shall be played at random')
 
-                        while i <= len(tracks) and not FLAGS['calledStop']:
+                        while (i <= len(tracks)) and (FLAGS['calledStop'] == False):
                                 if ran and len(randCalled) <= len(tracks):
                                         if FLAGS['debug']:
                                                 print('\nFrom play [random condition (randCalled before)]: ' + str(randCalled))
@@ -229,7 +235,7 @@ async def play(ctx, url, ran=False):
                                                 i = random.randrange(len(tracks))
                                                 if FLAGS['debug']:
                                                         print('From play [random condition (number genereated)]: ' + str(i))
-                                                while i in randCalled:
+                                                while (i in randCalled) and (len(randCalled) != len(tracks)):
                                                         i = random.randrange(len(tracks))
                                                         if FLAGS['debug']:
                                                                 print('From play [random condition (number in list trying again)]: ' + str(i))
@@ -318,14 +324,14 @@ async def play(ctx, url, ran=False):
                         else:
                                 await channel.send('The playlist shall be played at random')
 
-                        while i <= len(tracks) and not FLAGS['calledStop']:
+                        while (i <= len(tracks)) and (FLAGS['calledStop'] == False):
                                 if ran and len(randCalled) <= len(tracks):
                                         if randcalled == []:                                                
                                                 i = random.randrange(len(tracks))
                                                 randCalled.append(i)
                                         else:
-                                                i = -1
-                                                while i not in randCalled:
+                                                i = random.randrange(len(tracks))
+                                                while (i in randCalled) and (len(randCalled) != len(tracks)):
                                                         i = random.randrange(len(tracks))
                                                 randCalled.append(i)
                                                 
