@@ -132,3 +132,4 @@ dmypy.json
 #       .mp3 is for the song file that keeps getting downloaded and replaced
 song.mp3
 *.json
+*.webm

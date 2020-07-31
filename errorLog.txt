@@ -1,0 +1,907 @@
+Error logged at: 14:53:22 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:23 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:24 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:24 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:25 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:26 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:27 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:27 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:28 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:29 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:30 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:31 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:31 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:32 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:33 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:34 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:35 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:35 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:36 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:37 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:38 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:39 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:39 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:40 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:41 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:42 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:43 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:44 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:44 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:45 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:46 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:47 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:48 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:48 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:49 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:50 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:51 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:52 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:52 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:53 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:54 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:55 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:56 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:56 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:57 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:58 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:53:59 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:00 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:00 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:01 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:02 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:03 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:04 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:04 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:05 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:06 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:07 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:08 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:08 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:09 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:10 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:11 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:12 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:12 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:13 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:14 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:15 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:16 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:18 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:19 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:20 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:21 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:22 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:22 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:23 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:24 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:25 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:26 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:26 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:27 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:28 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:29 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:30 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:31 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:31 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:32 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:33 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:34 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:35 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:36 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:36 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:37 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:38 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:39 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:40 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:40 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:41 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:42 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:43 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:44 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 116, in getYtLink
+    print('From getYtLink: ' + search_results[0])
+IndexError: list index out of range
+
+Error logged at: 14:54:44 31-07-2020
+Error details as printed by python: 
+Traceback (most recent call last):
+  File "D:\Projects\Python\Personal\Discord Music bot\DiscordMusicBot.py", line 356, in play
+    ytUrl = getYtLink(tracks[i])
+IndexError: list index out of range
+

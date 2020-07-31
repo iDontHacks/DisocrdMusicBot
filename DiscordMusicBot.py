@@ -6,17 +6,24 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from PIL import Image, ImageFont, ImageDraw
 
 #Discord related info
-TOKEN = 'NTM3MzczMTU5ODc2MTk4NDAw.XnfPcQ.quxF8FZ3E7tgWUNrFzJb1Iy_jJQ'
+#TOKEN = 'NTM3MzczMTU5ODc2MTk4NDAw.XEeBwQ.y4il4G9AV_-gM-enm2BAJzJ2Tt4'
 client = commands.Bot(command_prefix = '.')
 BOT_NAME = 'Music Player'
 
 #Spotify related info
-CLIENT_ID = '5bdb9ae41cfb465391bb6184996f97ae'
-CLIENT_SECRET = '9ca3934ab64549e9b24859362dda92e9'
+#CLIENT_ID = '5bdb9ae41cfb465391bb6184996f97ae'
+#CLIENT_SECRET = 'b36d7c4772a84fe083105dd6d81f7af2'
 
 FLAGS = {'offCommand':False, 'debug':True, 'calledNext': False, 'calledPrev':False, 'calledStop':False, 'goTo':[False,0], 'emergencyStop':False}
 
 SONG_CHECK_GAP = 10
+
+def loadData():
+        with open("data.json", "r") as read_file:
+            data = json.load(read_file)
+
+        return data['TOKEN'], data['CLIENT_ID'], data['CLIENT_SECRET']
+        
 
 def logError(err):
         with open('errorLog.txt', 'a+') as file:
@@ -443,4 +450,5 @@ async def off(ctx):
         print('Off command passed')
         await client.logout()
 
+TOKEN, CLIENT_ID, CLIENT_SECRET = loadData()
 client.run(TOKEN)
