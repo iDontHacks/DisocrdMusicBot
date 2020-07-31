@@ -6,13 +6,10 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from PIL import Image, ImageFont, ImageDraw
 
 #Discord related info
-#TOKEN = 'NTM3MzczMTU5ODc2MTk4NDAw.XEeBwQ.y4il4G9AV_-gM-enm2BAJzJ2Tt4'
 client = commands.Bot(command_prefix = '.')
 BOT_NAME = 'Music Player'
 
-#Spotify related info
-#CLIENT_ID = '5bdb9ae41cfb465391bb6184996f97ae'
-#CLIENT_SECRET = 'b36d7c4772a84fe083105dd6d81f7af2'
+
 
 FLAGS = {'offCommand':False, 'debug':True, 'calledNext': False, 'calledPrev':False, 'calledStop':False, 'goTo':[False,0], 'emergencyStop':False}
 
@@ -450,5 +447,9 @@ async def off(ctx):
         print('Off command passed')
         await client.logout()
 
+#Spotify related info
+#CLIENT_ID
+#CLIENT_SECRET
+        
 TOKEN, CLIENT_ID, CLIENT_SECRET = loadData()
 client.run(TOKEN)
